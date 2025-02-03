@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>My Digital Portfolio</h1>
+        <button id="darkModeToggle">🌙</button>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#achievements">My Achievements</a></li>
+                <li><a href="#works">My Passionate Works</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <img src="images/profile.png" alt="My Profile Picture" class="profile-pic">
+        <h2>About Me</h2>
+        <p>Hi! I'm <strong>Yves Rael C. Brillantes</strong>, an Artist and Game Developer.</p>
+        <p>I'm currently studying at <strong>Mapua Malayan Colleges of Mindanao</strong> (EMC), aiming to develop my own game based on my original characters. I have a strong passion for indie games, especially those with unique features. While my art skills are well-developed, I'm also learning coding to enhance my game development abilities.</p>
+        <p>If you're interested in my works, feel free to check the links below.</p>
+    </section>
+
+    <section id="achievements">
+        <h2>My Achievements</h2>
+        <ul class="achievement-list">
+            <li>Attended a Coding Event in 2024</li>
+            <li>1st Place in EMC Game Pitching 2024</li>
+            <li>Created Friday Night Funkin' Sprites for Modding</li>
+        </ul>
+    </section>
+
+    <section id="works">
+        <h2>My Passionate Works</h2>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="developing">Developing</button>
+            <button class="filter-btn" data-filter="modding">Modding</button>
+        </div>
+
+        <div class="work-list">
+            <div class="work-item" data-category="developing">
+                <h3>Digital Art</h3>
+                <p>Creates many art pieces through digital means.</p>
+            </div>
+            <div class="work-item" data-category="developing">
+                <h3>Concept Art</h3>
+                <p>Creates ideas in a sketch.</p>
+            </div>
+            <div class="work-item" data-category="modding">
+                <h3>Friday Night Funkin'</h3>
+                <p>Made some assets in passionate teams.</p>
+            </div>
+        </div>
+    </section>    
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>    
+
+    <footer>
+        <p>© 2025 My Digital Portfolio | All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/Kewlbreeze8" target="_blank">
+                <img src="images/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/yves-rael-brillantes-028907252/" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://x.com/kewlbreeze8" target="_blank">
+                <img src="images/twitter.png" alt="Twitter">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
