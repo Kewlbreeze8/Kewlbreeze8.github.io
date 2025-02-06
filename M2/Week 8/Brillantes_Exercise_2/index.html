@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>    
+    <h1>To check the Console, please press Ctrl + Shift + I</h1>
+    <script>
+        // Arrays of possible random values
+        const names = ["Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Miller", "Ethan Davis"];
+        const locations = ["New York", "Los Angeles", "Chicago", "Houston", "Miami"];
+        
+        // Function to generate a random date within the last 10 years
+        function getRandomDate() {
+            const start = new Date(2014, 0, 1); // 10 years ago
+            const end = new Date();
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+                .toISOString().split('T')[0]; // Format YYYY-MM-DD
+        }
+
+        // Generate a random employee object
+        const employee = {
+            id: Math.floor(Math.random() * 9000) + 1000, // Random 4-digit ID
+            name: names[Math.floor(Math.random() * names.length)],
+            hire_date: getRandomDate(),
+            location: locations[Math.floor(Math.random() * locations.length)],
+            consultant: Math.random() < 0.5 // Random true/false
+        };
+
+        // Log each property separately for formatting
+        console.log("Employee id: " + employee.id);
+        console.log("name: " + employee.name);
+        console.log("hire date: " + employee.hire_date);
+        console.log("location: " + employee.location);
+        console.log("consultant: " + (employee.consultant ? "Yes" : "No")); // Converts boolean to readable format
+    </script>
+</body>
+</html>
