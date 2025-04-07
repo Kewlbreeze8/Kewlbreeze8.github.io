@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* White Vertical Borders */
+.vertical-border {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  width: 50px;
+}
+
+.vertical-border.left {
+  left: 0;
+}
+
+.vertical-border.right {
+  right: 0;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 10px; /* Slightly rounded corners for the box */
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-box h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #555;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Semi-round corners */
+  font-size: 1em;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #017afe;
+  color: white;
+  font-size: 1em;
+  padding: 10px;
+  border: none;
+  border-radius: 6px; /* Semi-round corners */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #005bb5;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #017afe;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
