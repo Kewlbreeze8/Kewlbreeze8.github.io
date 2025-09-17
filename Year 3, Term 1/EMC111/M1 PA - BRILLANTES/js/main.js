@@ -70,6 +70,34 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
+// === Main Room Light (Ceiling) ===
+const ceilingLight = new THREE.PointLight(0xffffff, 1.2, 30); 
+ceilingLight.position.set(0, 8, 0); // centered above the room
+scene.add(ceilingLight);
+
+// Ceiling fixture base (attached to ceiling)
+const fixtureBase = new THREE.Mesh(
+  new THREE.CylinderGeometry(1, 1, 0.2, 32),
+  new THREE.MeshStandardMaterial({ color: 0x333333, metalness: 0.6 }) // dark metallic base
+);
+fixtureBase.position.set(0, 9, 0); // just under the ceiling
+scene.add(fixtureBase);
+
+// Ceiling lamp dome (frosted glass look)
+const fixtureDome = new THREE.Mesh(
+  new THREE.SphereGeometry(1.2, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), 
+  // half-sphere (dome)
+  new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.6,
+    emissive: 0xffffff,
+    emissiveIntensity: 0.2
+  })
+);
+fixtureDome.position.set(0, 7.9, 0);
+scene.add(fixtureDome);
+
 // === Trash Can ===
 const trashCan = new THREE.Mesh(
   new THREE.CylinderGeometry(0.5, 0.5, 1.5, 30, 1, true), 
