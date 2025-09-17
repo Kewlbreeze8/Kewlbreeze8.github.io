@@ -28,7 +28,7 @@ scene.add(pointLight);
 
 // === Materials ===
 const floorMaterial = new THREE.MeshStandardMaterial({ color: 0xd2b48c }); // wood-like tan
-const wallMaterial = new THREE.MeshStandardMaterial({ color: 0xf0f0f0 }); // off-white walls
+const wallMaterial = new THREE.MeshStandardMaterial({ color: 0xadd8e6 }); // light-blue walls
 
 // === Floor ===
 const floor = new THREE.Mesh(
@@ -40,20 +40,20 @@ floor.position.y = 0;
 scene.add(floor);
 
 // === Left Wall ===
-const leftWall = new THREE.Mesh(
-  new THREE.PlaneGeometry(20, 10),
-  new THREE.MeshStandardMaterial({ color: 0xadd8e6 }) // light blue
-);
-leftWall.rotation.y = Math.PI / 2;
-leftWall.position.set(-10, 5, 0);
+const leftWall = new THREE.Mesh( 
+  new THREE.PlaneGeometry(20, 10), 
+  wallMaterial 
+); 
+leftWall.rotation.y = Math.PI / 2; 
+leftWall.position.set(-10, 5, 0); 
 scene.add(leftWall);
 
 // === Right Wall ===
-const rightWall = new THREE.Mesh(
-  new THREE.PlaneGeometry(20, 10),
-  new THREE.MeshStandardMaterial({ color: 0xadd8e6 }) // light blue
-);
-rightWall.position.set(0, 5, -10);
+const rightWall = new THREE.Mesh( 
+  new THREE.PlaneGeometry(20, 10), 
+  wallMaterial 
+); 
+rightWall.position.set(0, 5, -10); 
 scene.add(rightWall);
 
 // === Animate ===
@@ -110,7 +110,7 @@ const trashCan = new THREE.Mesh(
   })
 );
 
-// Add a thin rim for the top
+// Thin Rim
 const trashCanRim = new THREE.Mesh(
   new THREE.TorusGeometry(0.5, 0.05, 15, 100),
   new THREE.MeshStandardMaterial({ color: 0x606060, metalness: 0.8 })
@@ -137,7 +137,7 @@ const mattress = new THREE.Mesh(
 mattress.position.set(-7, 1.25, -8);
 scene.add(mattress);
 
-// === Pillow ===
+// Pillow 
 const pillow = new THREE.Mesh(
   new THREE.BoxGeometry(2, 0.5, 3),
   new THREE.MeshStandardMaterial({ color: 0xfff8dc })
@@ -177,7 +177,7 @@ const closet = new THREE.Mesh(
   new THREE.BoxGeometry(3, 6, 6),
   new THREE.MeshStandardMaterial({ color: 0x3a5fcd }) // royal blue
 );
-closet.position.set(-9.5, 3, 6.5); // along left wall
+closet.position.set(-9.5, 3, 6.5);
 scene.add(closet);
 
 // Closet doors
@@ -258,11 +258,11 @@ rugCanvas.width = 512;
 rugCanvas.height = 512;
 const rugCtx = rugCanvas.getContext("2d");
 
-// Fill background
+// Rug background
 rugCtx.fillStyle = "#d2b48c"; // base rug color (tan)
 rugCtx.fillRect(0, 0, rugCanvas.width, rugCanvas.height);
 
-// Draw spiral pattern
+// Spiral pattern
 rugCtx.strokeStyle = "#8b0000"; // dark red spiral
 rugCtx.lineWidth = 4;
 rugCtx.beginPath();
@@ -280,6 +280,7 @@ while (spiralRadius < 250) {
 rugCtx.stroke();
 
 // === Study Area ===
+
 // Table
 const table = new THREE.Mesh(
   new THREE.BoxGeometry(4, 0.3, 2),
@@ -354,7 +355,7 @@ scene.add(laptopScreen);
 const laptopDisplay = new THREE.Mesh(
   new THREE.PlaneGeometry(1.8, 1), // inner display
   new THREE.MeshStandardMaterial({
-    color: 0x1e90ff, // bluish glow (like Windows login screen)
+    color: 0x1e90ff, // blu-ish glow (like Windows login screen)
     emissive: 0x1e90ff,
     emissiveIntensity: 0.3
   })
@@ -417,15 +418,14 @@ rugCtx.beginPath();
 rugCtx.arc(centerX, centerY, 250, 0, Math.PI * 2);
 rugCtx.stroke();
 
-// Turn canvas into a texture
 const spiralTexture = new THREE.CanvasTexture(rugCanvas);
 
 const circularRug = new THREE.Mesh(
-  new THREE.CircleGeometry(6, 64), // radius 6, smooth circle
+  new THREE.CircleGeometry(6, 64),
   new THREE.MeshStandardMaterial({ map: spiralTexture, side: THREE.DoubleSide })
 );
-circularRug.rotation.x = -Math.PI / 2; // flat on floor
-circularRug.position.set(0, 0.01, 0); // center of room
+circularRug.rotation.x = -Math.PI / 2;
+circularRug.position.set(0, 0.01, 0);
 scene.add(circularRug);
 
 
