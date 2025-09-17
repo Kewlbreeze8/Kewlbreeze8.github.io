@@ -11,7 +11,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 // Pull camera back and higher up, angled toward center of room
-camera.position.set(18, 8   , 18);  
+camera.position.set(18, 8, 18);  
 camera.lookAt(0, 5, 0);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -42,7 +42,7 @@ scene.add(floor);
 // === Left Wall ===
 const leftWall = new THREE.Mesh(
   new THREE.PlaneGeometry(20, 10),
-  wallMaterial
+  new THREE.MeshStandardMaterial({ color: 0xadd8e6 }) // light blue
 );
 leftWall.rotation.y = Math.PI / 2;
 leftWall.position.set(-10, 5, 0);
@@ -51,7 +51,7 @@ scene.add(leftWall);
 // === Right Wall ===
 const rightWall = new THREE.Mesh(
   new THREE.PlaneGeometry(20, 10),
-  wallMaterial
+  new THREE.MeshStandardMaterial({ color: 0xadd8e6 }) // light blue
 );
 rightWall.position.set(0, 5, -10);
 scene.add(rightWall);
