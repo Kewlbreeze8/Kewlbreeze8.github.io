@@ -2,4 +2,4 @@ All of the files for this repository are focused on tasks and mini projects I ma
 Other extensive Projects I made are in the other repositories.
 
 Current Update:
-- Updated the old URL "Kewlbreeze8/Kewlbreeze8.github.io" to "Kewlbreeze8/Schoolwork" to prevent confusion
+- Updated the old URL "Kewlbreeze8/Kewlbreeze8.github.io" to "Kewlbreeze8/College" to prevent confusion
